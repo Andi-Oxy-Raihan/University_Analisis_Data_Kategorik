@@ -1,0 +1,96 @@
+---
+title: "(5ADK4) Tugas 1"
+author: "Andi Oxy Raihan Machikami Rahman"
+format: html
+editor: visual
+---
+
+![](images/clipboard-3786880320.jpeg){width="757" height="305"}
+
+## Latihan 1.6
+
+Sebuah survei dilakukan terhadap **12 mahasiswa** mengenai jenis transportasi ke kampus dan kepuasan terhadap fasilitas kampus. Data yang diperoleh:
+
+| ID  | Transportasi | Kepuasan    |
+|-----|--------------|-------------|
+| 1   | Motor        | Puas        |
+| 2   | Mobil        | Sangat Puas |
+| 3   | Motor        | Cukup       |
+| 4   | Jalan Kaki   | Tidak Puas  |
+| 5   | Motor        | Cukup       |
+| 6   | Sepeda       | Puas        |
+| 7   | Mobil        | Sangat Puas |
+| 8   | Motor        | Puas        |
+| 9   | Jalan Kaki   | Cukup       |
+| 10  | Motor        | Puas        |
+| 11  | Sepeda       | Tidak Puas  |
+| 12  | Mobil        | Puas        |
+
+1.  **Masukkan Data ke R dan Buat menjadi Data Frame**
+
+    ```{r}
+    data <- data.frame(
+      ID = 1:12,
+      Transportasi = c("Motor", "Mobil", "Motor", "Jalan Kaki", "Motor",
+                       "Sepeda", "Mobil", "Motor", "Jalan Kaki", "Motor",
+                       "Sepeda", "Mobil"),
+      Kepuasan = c("Puas", "Sangat Puas", "Cukup", "Tidak Puas", "Cukup",
+                   "Puas", "Sangat Puas", "Puas", "Cukup", "Puas",
+                   "Tidak Puas", "Puas")
+    )
+    data
+    ```
+
+<!-- -->
+
+2.  **Buat Tabel untuk Frekuensi Transportasi**
+
+    ```{r}
+    table(data$Transportasi)
+    ```
+
+<!-- -->
+
+3.  **Tabel Proporsi Kepuasan**
+
+    ```{r}
+    prop.table(table(data$Kepuasan))
+    ```
+
+4.  **Tabel Silang Transportasi X Kepuasan**
+
+    ```{r}
+    table(data$Transportasi, data$Kepuasan)
+    ```
+
+5.  **Visualisasi Distribusi Transportasi**
+
+    ```{r}
+    sort_transportasi = sort(table(data$Transportasi), decreasing=TRUE)
+    barplot(sort_transportasi,
+            main = "Distribusi Transportasi Mahasiswa",
+            xlab = "Jenis Transportasi",
+            ylab = "Frekuensi",
+            col = c("lightblue","brown","lightgrey","pink"))
+    ```
+
+6.  **Pie Chart Kepuasan**
+
+    ```{r}
+    pie(table(data$Kepuasan),
+        main="Distribusi Kepuasan Mahasiswa")
+    ```
+
+7.  **Tulis Kesimpulan:**
+
+    -   **Moda transportasi apa yang paling dominan?**
+
+        Frekuensi terbanyak ada pada motor yang berjumlah 5 dari 12 data
+
+    -   **Bagaimana Distribusi Kepuasan Mahasiswa?**
+
+        Kepuasan terbanyak = *Puas*, lalu *Cukup*, sementara *Sangat Puas* & *Tidak Puas* lebih sedikit.
+
+    -   **Adakah Kecenderungan tertentu antara transportasi dan kepuasan?**
+
+        Secara umum, tingkat kepuasan mahasiswa menunjukkan variasi berdasarkan jenis transportasi yang digunakan. Pengguna mobil cenderung memiliki tingkat kepuasan yang lebih tinggi, karena sebagian besar dari mereka berada pada kategori *Sangat Puas* atau *Puas*. Sebaliknya, mahasiswa yang datang ke kampus dengan berjalan kaki atau menggunakan sepeda tampak memiliki tingkat kepuasan yang lebih rendah, ditunjukkan dengan adanya respon pada kategori *Tidak Puas*. Sementara itu, pengguna motor berada pada tingkat kepuasan menengah, dengan mayoritas respon berada pada kategori *Cukup* dan *Puas*, sehingga menunjukkan kepuasan yang tidak setinggi pengguna mobil tetapi tetap lebih baik dibandingkan pejalan kaki dan pesepeda.
