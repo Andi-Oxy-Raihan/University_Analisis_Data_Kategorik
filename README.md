@@ -5,4 +5,4 @@
 
 [Tugas 3: Uji Chi-Square ](https://andi-oxy-raihan.github.io/University-Analisis_Data_Kategorik/Bab%203%20-%20Uji%20Chi-Square)
 
-[Tugas 4: Ujian Akhir ](https://andi-oxy-raihan.github.io/University-Analisis_Data_Kategorik/Ujian%20Akhir/index.html)
+[ Ujian Akhir ](https://andi-oxy-raihan.github.io/University-Analisis_Data_Kategorik/Ujian%20Akhir/index.html)
